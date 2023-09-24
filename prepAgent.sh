@@ -19,7 +19,7 @@ sudo su -c "echo 'AzDevOps  ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/01
 sudo mkdir /agent && chmod 775 /agent
 sudo chown -R AzDevOps:AzDevOps /agent
 
-# Create symlink for _work on data disk
-# sudo mkdir /datadisks/disk1/_work
-# sudo ln -s /datadisks/disk1/_work /agent/_work
-# sudo chown -R AzDevOps:AzDevOps /datadisks/disk1
+# Create _work folder on data disk and set ENV
+sudo mkdir /datadisks/disk1/_work
+sudo chown -R AzDevOps:AzDevOps /datadisks/disk1/_work
+sudo echo "export $VSTS_AGENT_INPUT_WORK = /datadisks/disk1/_work" >> /etc/profile.d/agent_env_vars.sh
