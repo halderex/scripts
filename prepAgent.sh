@@ -22,4 +22,4 @@ sudo chown -R AzDevOps:AzDevOps /agent
 # Create _work folder on data disk and set ENV
 sudo mkdir /datadisks/disk1/_work
 sudo chown -R AzDevOps:AzDevOps /datadisks/disk1/_work
-sudo echo "export VSTS_AGENT_INPUT_WORK=/datadisks/disk1/_work" >> /etc/profile.d/agent_env_vars.sh
+# sudo echo "export VSTS_AGENT_INPUT_WORK=/datadisks/disk1/_work" >> /etc/profile.d/agent_env_vars.sh
